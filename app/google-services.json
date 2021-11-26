@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1041530873651",
+    "project_id": "firemusic-6f843",
+    "storage_bucket": "firemusic-6f843.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1041530873651:android:3407c2820fafa0f9e30046",
+        "android_client_info": {
+          "package_name": "tm.com.firemusic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1041530873651-3u1fonr1311cnrtaairmk94nha6s927a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDrDYID4pxZsMnzZ3ESaq-b64w4qkKOHE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1041530873651-3u1fonr1311cnrtaairmk94nha6s927a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
