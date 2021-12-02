@@ -7,7 +7,7 @@ import com.google.android.exoplayer2.ui.PlayerNotificationManager
 import tm.com.firemusic.exoplayer.MusicService
 import tm.com.firemusic.utils.Constants.NOTIFICATION_ID
 
-class ClassMusicPlayerNotificationListener(
+class MusicPlayerNotificationListener(
     private val musicService: MusicService
 ) : PlayerNotificationManager.NotificationListener {
 
