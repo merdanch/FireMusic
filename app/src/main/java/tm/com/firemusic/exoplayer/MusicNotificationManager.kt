@@ -18,7 +18,8 @@ import tm.com.firemusic.utils.Constants.NOTIFICATION_ID
 class MusicNotificationManager(
     private val context: Context,
     sessionToken: MediaSessionCompat.Token,
-    notificationListener: PlayerNotificationManager.NotificationListener
+    notificationListener: PlayerNotificationManager.NotificationListener,
+    private val newSongCallback: () -> Unit
 ) {
 
     private val notificationManager: PlayerNotificationManager
@@ -38,6 +39,10 @@ class MusicNotificationManager(
             setSmallIcon(R.drawable.ic_music)
             setMediaSessionToken(sessionToken)
         }
+    }
+
+    fun showNotification(player: Player){
+        notificationManager.setPlayer(player)
     }
 
     private inner class DescriptionAdapter(
