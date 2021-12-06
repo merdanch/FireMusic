@@ -22,6 +22,7 @@ import tm.com.firemusic.exoplayer.callbacks.MusicPlaybackPreparer
 import tm.com.firemusic.exoplayer.callbacks.MusicPlayerEventListener
 import tm.com.firemusic.exoplayer.callbacks.MusicPlayerNotificationListener
 import tm.com.firemusic.utils.Constants.MEDIA_ROOT_ID
+import tm.com.firemusic.utils.Constants.NETWORK_ERROR
 import javax.inject.Inject
 
 private const val SERVICE_TAG = "MusicService"
@@ -172,6 +173,7 @@ class MusicService : MediaBrowserServiceCompat() {
                             isPlayerInitialized = true
                         }
                     } else {
+                        mediaSession.sendSessionEvent(NETWORK_ERROR, null)
                         result.sendResult(null)
                     }
                 }
