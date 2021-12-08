@@ -1,9 +1,9 @@
 package tm.com.firemusic.data.remote
 
 import com.google.firebase.firestore.FirebaseFirestore
-import kotlinx.coroutines.tasks.await
 import tm.com.firemusic.data.entities.Song
-import tm.com.firemusic.utils.Constants.SONG_COLLECTION
+import tm.com.firemusic.other.Constants.SONG_COLLECTION
+import kotlinx.coroutines.tasks.await
 
 class MusicDatabase {
 
@@ -13,7 +13,7 @@ class MusicDatabase {
     suspend fun getAllSongs(): List<Song> {
         return try {
             songCollection.get().await().toObjects(Song::class.java)
-        } catch (e: Exception) {
+        } catch(e: Exception) {
             emptyList()
         }
     }

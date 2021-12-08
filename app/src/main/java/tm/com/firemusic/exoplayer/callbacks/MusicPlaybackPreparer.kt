@@ -21,7 +21,7 @@ class MusicPlaybackPreparer(
         command: String,
         extras: Bundle?,
         cb: ResultReceiver?
-    ): Boolean = false
+    ) = false
 
     override fun getSupportedPrepareActions(): Long {
         return PlaybackStateCompat.ACTION_PREPARE_FROM_MEDIA_ID or
@@ -41,3 +41,18 @@ class MusicPlaybackPreparer(
 
     override fun onPrepareFromUri(uri: Uri, playWhenReady: Boolean, extras: Bundle?) = Unit
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

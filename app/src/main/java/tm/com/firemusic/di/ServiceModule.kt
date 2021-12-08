@@ -6,13 +6,13 @@ import com.google.android.exoplayer2.SimpleExoPlayer
 import com.google.android.exoplayer2.audio.AudioAttributes
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
 import com.google.android.exoplayer2.util.Util
+import tm.com.firemusic.data.remote.MusicDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ServiceComponent
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.android.scopes.ServiceScoped
-import tm.com.firemusic.data.remote.MusicDatabase
 
 @Module
 @InstallIn(ServiceComponent::class)
@@ -43,5 +43,17 @@ object ServiceModule {
     @Provides
     fun provideDataSourceFactory(
         @ApplicationContext context: Context
-    ) = DefaultDataSourceFactory(context, Util.getUserAgent(context, "FireMusic App"))
+    ) = DefaultDataSourceFactory(context, Util.getUserAgent(context, "Spotify App"))
 }
+
+
+
+
+
+
+
+
+
+
+
+

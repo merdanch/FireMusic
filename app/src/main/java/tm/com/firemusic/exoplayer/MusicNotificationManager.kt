@@ -11,9 +11,9 @@ import com.bumptech.glide.request.target.CustomTarget
 import com.bumptech.glide.request.transition.Transition
 import com.google.android.exoplayer2.Player
 import com.google.android.exoplayer2.ui.PlayerNotificationManager
+import tm.com.firemusic.other.Constants.NOTIFICATION_CHANNEL_ID
+import tm.com.firemusic.other.Constants.NOTIFICATION_ID
 import tm.com.firemusic.R
-import tm.com.firemusic.utils.Constants.NOTIFICATION_CHANNEL_ID
-import tm.com.firemusic.utils.Constants.NOTIFICATION_ID
 
 class MusicNotificationManager(
     private val context: Context,
@@ -26,7 +26,6 @@ class MusicNotificationManager(
 
     init {
         val mediaController = MediaControllerCompat(context, sessionToken)
-
         notificationManager = PlayerNotificationManager.createWithNotificationChannel(
             context,
             NOTIFICATION_CHANNEL_ID,
@@ -41,14 +40,16 @@ class MusicNotificationManager(
         }
     }
 
-    fun showNotification(player: Player){
+    fun showNotification(player: Player) {
         notificationManager.setPlayer(player)
     }
 
     private inner class DescriptionAdapter(
         private val mediaController: MediaControllerCompat
     ) : PlayerNotificationManager.MediaDescriptionAdapter {
+
         override fun getCurrentContentTitle(player: Player): CharSequence {
+            newSongCallback()
             return mediaController.metadata.description.title.toString()
         }
 
@@ -75,12 +76,8 @@ class MusicNotificationManager(
                     }
 
                     override fun onLoadCleared(placeholder: Drawable?) = Unit
-
                 })
-
             return null
         }
-
     }
-
 }
